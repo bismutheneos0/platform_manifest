@@ -470,6 +470,7 @@
   <project path="external/pixman" name="platform/external/pixman" groups="pdk"/>
   <project path="external/ply" name="platform/external/ply" groups="pdk"/>
   <project path="external/pogreb" name="platform/external/pogreb" groups="pdk"/>
+  <project path="external/population-density" name="platform_external_population-density" groups="pdk-fs" remote="grapheneos"/>
   <project path="external/private-join-and-compute" name="platform/external/private-join-and-compute" groups="pdk"/>
   <project path="external/protobuf" name="platform_external_protobuf" groups="pdk,sysui-studio" remote="grapheneos" aosp-name="platform/external/protobuf"/>
   <project path="external/pthreadpool" name="platform/external/pthreadpool" groups="pdk"/>

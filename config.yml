@@ -76,6 +76,9 @@ additional_projects:
   - path: external/PdfViewer
     name: platform_external_PdfViewer
     clone_depth: 1
+  - path: external/population-density
+    name: platform_external_population-density
+    groups: pdk-fs
   - path: external/SpeechServices
     name: platform_external_SpeechServices
     clone_depth: 1
