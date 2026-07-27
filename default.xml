@@ -4,6 +4,8 @@
 <manifest>
   <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/heads/16-qpr2"/>
   <remote name="grapheneos-gitlab" fetch="https://gitlab.com/grapheneos/" revision="refs/heads/16-qpr2"/>
+  <remote name="lineageos" fetch="https://github.com/LineageOS/" revision="refs/heads/lineage-23.2"/>
+  <remote name="codeberg" fetch="https://codeberg.org/bismutheneos/" revision="refs/heads/16-qpr2"/>
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/"/>
   <default revision="refs/tags/android-16.0.0_r4" remote="aosp" sync-j="4"/>
   <superproject name="platform/superproject" remote="aosp" revision="android-16.0.0_r4"/>
@@ -47,27 +49,17 @@
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk"/>
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk"/>
   <project path="device/google_car" name="device/google_car" groups="pdk"/>
-  <project path="device/google/akita-kernels/6.1" name="device_google_akita-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/bluejay-kernels/6.1" name="device_google_bluejay-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/caimito-kernels/6.1" name="device_google_caimito-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/comet-kernels/6.1" name="device_google_comet-kernels_6.1" remote="grapheneos" clone-depth="1"/>
   <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk"/>
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1"/>
   <project path="device/google/cuttlefish_vmm" name="device/google/cuttlefish_vmm" groups="device,pdk" clone-depth="1"/>
-  <project path="device/google/felix-kernels/6.1" name="device_google_felix-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/laguna-kernels/6.6" name="device_google_laguna-kernels_6.6" remote="grapheneos"/>
-  <project path="device/google/lynx-kernels/6.1" name="device_google_lynx-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/pantah-kernels/6.1" name="device_google_pantah-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/raviole-kernels/6.1" name="device_google_raviole-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/shusky-kernels/6.1" name="device_google_shusky-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/stallion-kernels/6.1" name="device_google_stallion-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/tangorpro-kernels/6.1" name="device_google_tangorpro-kernels_6.1" remote="grapheneos" clone-depth="1"/>
-  <project path="device/google/tegu-kernels/6.1" name="device_google_tegu-kernels_6.1" remote="grapheneos" clone-depth="1"/>
   <project path="device/linaro/dragonboard" name="device/linaro/dragonboard" groups="device,dragonboard,pdk"/>
   <project path="device/linaro/dragonboard-kernel" name="device/linaro/dragonboard-kernel" groups="device,dragonboard,pdk" clone-depth="1"/>
   <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk"/>
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1"/>
   <project path="device/sample" name="device/sample" groups="pdk"/>
+  <project path="device/samsung_slsi/sepolicy" name="android_device_samsung_slsi_sepolicy" remote="lineageos"/>
+  <project path="device/samsung/a21s" name="android_device_samsung_a21s" remote="lineageos"/>
+  <project path="device/samsung/a21s-common" name="android_device_samsung_a21s-common" remote="lineageos"/>
   <project path="external/aac" name="platform/external/aac" groups="pdk"/>
   <project path="external/abseil-cpp" name="platform/external/abseil-cpp" groups="pdk"/>
   <project path="external/accessibility-test-framework" name="platform/external/accessibility-test-framework" groups="pdk"/>
@@ -95,7 +87,6 @@
   <project path="external/arm-optimized-routines" name="platform/external/arm-optimized-routines" groups="pdk"/>
   <project path="external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" groups="pdk"/>
   <project path="external/armnn" name="platform/external/armnn" groups="pdk-lassen,pdk-gs-arm"/>
-  <project path="external/Auditor" name="platform_external_Auditor" remote="grapheneos" clone-depth="1"/>
   <project path="external/auto" name="platform/external/auto" groups="pdk"/>
   <project path="external/automotive-design-compose-protos" name="platform/external/automotive-design-compose-protos" groups="pdk"/>
   <project path="external/avb" name="platform/external/avb" groups="pdk"/>
@@ -237,7 +228,7 @@
   <project path="external/gwp_asan" name="platform/external/gwp_asan" groups="pdk"/>
   <project path="external/hafnium" name="platform/external/hafnium" groups="pdk"/>
   <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk"/>
-  <project path="external/hardened_malloc" name="hardened_malloc" remote="grapheneos"/>
+  <project path="external/hardened_malloc" name="hardened_malloc" remote="codeberg"/>
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26"/>
   <project path="external/hplip" name="platform/external/hplip" groups="pdk"/>
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk"/>
@@ -247,7 +238,6 @@
   <project path="external/igt-gpu-tools" name="platform/external/igt-gpu-tools" groups="pdk"/>
   <project path="external/image_io" name="platform/external/image_io" groups="pdk"/>
   <project path="external/ims" name="platform/external/ims" groups="pdk"/>
-  <project path="external/Info" name="platform_external_Info" groups="pdk-fs" remote="grapheneos" clone-depth="1"/>
   <project path="external/intel-pmt-metadata" name="platform/external/intel-pmt-metadata" groups="pdk"/>
   <project path="external/iperf3" name="platform/external/iperf3" groups="pdk"/>
   <project path="external/iproute2" name="platform/external/iproute2" groups="pdk"/>
@@ -658,6 +648,7 @@
   <project path="hardware/google/camera" name="platform/hardware/google/camera" groups="pdk"/>
   <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" groups="pdk"/>
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk,sysui-studio"/>
+  <project path="hardware/google/pixel" name="android_hardware_google_pixel" remote="lineageos"/>
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk,sysui-studio"/>
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk"/>
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk"/>
@@ -666,6 +657,19 @@
   <project path="hardware/nxp/weaver" name="platform/hardware/nxp/weaver" groups="pdk"/>
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom"/>
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk"/>
+  <project path="hardware/samsung" name="android_hardware_samsung" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/codec2" name="android_hardware_samsung_slsi-linaro_codec2" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/config" name="android_hardware_samsung_slsi-linaro_config" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/exynos" name="android_hardware_samsung_slsi-linaro_exynos" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/exynos5" name="android_hardware_samsung_slsi-linaro_exynos5" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/graphics" name="android_hardware_samsung_slsi-linaro_graphics" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/interfaces" name="android_hardware_samsung_slsi-linaro_interfaces" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/openmax" name="android_hardware_samsung_slsi-linaro_openmax" remote="lineageos"/>
+  <project path="hardware/samsung_slsi-linaro/sgpu" name="android_hardware_samsung_slsi-linaro_sgpu" remote="lineageos"/>
+  <project path="hardware/samsung_slsi/libbt" name="android_hardware_samsung_slsi_libbt" remote="lineageos"/>
+  <project path="hardware/samsung_slsi/nfc" name="android_hardware_samsung_slsi_nfc" remote="lineageos"/>
+  <project path="hardware/samsung_slsi/scsc_wifibt/wifi_hal" name="android_hardware_samsung_slsi_scsc_wifibt_wifi_hal" remote="lineageos"/>
+  <project path="hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib" name="android_hardware_samsung_slsi_scsc_wifibt_wpa_supplicant_lib" remote="lineageos"/>
   <project path="hardware/samsung/nfc" name="platform/hardware/samsung/nfc" groups="pdk"/>
   <project path="hardware/st/nfc" name="platform_hardware_st_nfc" groups="pdk" remote="grapheneos" aosp-name="platform/hardware/st/nfc"/>
   <project path="hardware/st/secure_element" name="platform/hardware/st/secure_element" groups="pdk"/>
@@ -691,6 +695,7 @@
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1"/>
   <project path="kernel/prebuilts/mainline/arm64" name="kernel/prebuilts/mainline/arm64" groups="pdk" clone-depth="1"/>
   <project path="kernel/prebuilts/mainline/x86_64" name="kernel/prebuilts/mainline/x86-64" groups="pdk" clone-depth="1"/>
+  <project path="kernel/samsung/exynos850" name="android_kernel_samsung_exynos850" remote="lineageos"/>
   <project path="kernel/tests" name="kernel/tests" groups="vts,pdk"/>
   <project path="libcore" name="platform_libcore" groups="pdk" remote="grapheneos" aosp-name="platform/libcore"/>
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk"/>
@@ -775,7 +780,6 @@
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="pdk-fs,pdk-cw-tvc"/>
   <project path="packages/apps/TvSystemUI" name="platform/packages/apps/TvSystemUI" groups="pdk-fs"/>
   <project path="packages/apps/UniversalMediaPlayer" name="platform/packages/apps/UniversalMediaPlayer"/>
-  <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="grapheneos"/>
   <project path="packages/apps/WallpaperPicker2" name="platform_packages_apps_WallpaperPicker2" groups="pdk-fs,sysui-studio" remote="grapheneos" aosp-name="platform/packages/apps/WallpaperPicker2"/>
   <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="grapheneos" aosp-name="platform/packages/inputmethods/LatinIME"/>
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs"/>
@@ -864,6 +868,7 @@
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" groups="pdk" clone-depth="1"/>
   <project path="prebuilts/cmdline-tools" name="platform/prebuilts/cmdline-tools" groups="pdk-cw-fs,pdk-fs,sysui-studio" clone-depth="1"/>
   <project path="prebuilts/devtools" name="platform/prebuilts/devtools" groups="pdk-fs" clone-depth="1"/>
+  <project path="prebuilts/extract-tools" name="android_prebuilts_extract-tools" remote="lineageos"/>
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="pdk,linux" clone-depth="1"/>
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="pdk-cw-fs,pdk-fs" clone-depth="1"/>
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1"/>
@@ -900,7 +905,6 @@
   <project path="prebuilts/module_sdk/Uwb" name="platform/prebuilts/module_sdk/Uwb" groups="pdk" clone-depth="1"/>
   <project path="prebuilts/module_sdk/Wifi" name="platform/prebuilts/module_sdk/Wifi" groups="pdk" clone-depth="1"/>
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1"/>
-  <project path="prebuilts/qemu-kernel" name="platform_prebuilts_qemu-kernel" groups="pdk" remote="grapheneos" clone-depth="1"/>
   <project path="prebuilts/r8" name="platform/prebuilts/r8" groups="pdk,sysui-studio" clone-depth="1"/>
   <project path="prebuilts/remoteexecution-client" name="platform/prebuilts/remoteexecution-client" groups="pdk" clone-depth="1"/>
   <project path="prebuilts/runtime" name="platform/prebuilts/runtime" groups="pdk" clone-depth="1"/>
@@ -1009,6 +1013,7 @@
   <project path="tools/doc_generation" name="platform/tools/doc_generation" groups="tools,pdk"/>
   <project path="tools/external_updater" name="platform/tools/external_updater" groups="tools"/>
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools"/>
+  <project path="tools/extract-utils" name="android_tools_extract-utils" remote="lineageos"/>
   <project path="tools/lint_checks" name="platform/tools/lint_checks" groups="pdk"/>
   <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed"/>
   <project path="tools/metalava" name="platform_tools_metalava" groups="pdk,tools" remote="grapheneos" aosp-name="platform/tools/metalava"/>
@@ -1054,6 +1059,6 @@
   <project path="trusty/vendor/google/aosp" name="trusty/vendor/google/aosp" groups="trusty,pdk">
     <copyfile src="lk_inc.mk" dest="lk_inc.mk"/>
   </project>
-  <project path="vendor/adevtool" name="adevtool" remote="grapheneos"/>
-  <project path="vendor/state" name="vendor_state" remote="grapheneos" clone-depth="1"/>
+  <project path="vendor/adevtool" name="adevtool" remote="codeberg"/>
+  <project path="vendor/lineage" name="android_vendor_lineage" remote="lineageos"/>
 </manifest>
