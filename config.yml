@@ -140,6 +140,9 @@ additional_projects:
   - path: prebuilts/extract-tools
     name: android_prebuilts_extract-tools
     remote: lineageos
+  - path: device/lineage/sepolicy
+    name: android_device_lineage_sepolicy
+    remote: lineageos
   - path: vendor/lineage
     name: android_vendor_lineage
     remote: lineageos

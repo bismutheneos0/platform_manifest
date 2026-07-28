@@ -56,6 +56,7 @@
   <project path="device/linaro/dragonboard-kernel" name="device/linaro/dragonboard-kernel" groups="device,dragonboard,pdk" clone-depth="1"/>
   <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk"/>
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1"/>
+  <project path="device/lineage/sepolicy" name="android_device_lineage_sepolicy" remote="lineageos"/>
   <project path="device/sample" name="device/sample" groups="pdk"/>
   <project path="device/samsung_slsi/sepolicy" name="android_device_samsung_slsi_sepolicy" remote="lineageos"/>
   <project path="device/samsung/a21s" name="android_device_samsung_a21s" remote="lineageos"/>
